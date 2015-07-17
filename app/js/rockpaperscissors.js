@@ -25,9 +25,15 @@ function getPlayerMove(move) {
     // Write an expression that operates on a variable called `move`
     // If a `move` has a value, your expression should evaluate to that value.
     // However, if `move` is not specified / is null, your expression should equal `getInput()`.
-    return "'move' > 0 || null = 'getInput()'";
+    if (getPlayerMove("rock")) {
+        return "rock";
+    } else if (getPlayerMove("paper")) {
+        return "paper";
+    } else if (getPlayerMove("scissors")) {
+        return "scissors";
+    } else getPlayerMove (0 || 'null');
+        return  'getInput()';
 }
-
 function getComputerMove(move) {
     // Write an expression that operates on a variable called `move`
     // If a `move` has a value, your expression should evaluate to that value.
