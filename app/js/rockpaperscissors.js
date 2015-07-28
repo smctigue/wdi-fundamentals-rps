@@ -25,61 +25,41 @@ function getPlayerMove(move) {
     // Write an expression that operates on a variable called `move`
     // If a `move` has a value, your expression should evaluate to that value.
     // However, if `move` is not specified / is null, your expression should equal `getInput()`.
-    if (move === "rock") {
-        return "rock";
-    } else if (move === "paper") {
-        return "paper";
-    } else if (move === "scissors") {
-        return "scissors";
-    } else (move === 'null');
-        return  'getInput()';
+        return move || 'getInput()';
 }
 
 function getComputerMove(move) {
     // Write an expression that operates on a variable called `move`
     // If a `move` has a value, your expression should evaluate to that value.
     // However, if `move` is not specified / is null, your expression should equal `randomPlay()`.
-    if (move === "rock") {
-        return "rock";
-    } else if (move === "paper") {
-        return "paper";
-    } else if (move === "scissors") {
-        return "scissors";
-    } else (move === 'null');
-        return  'randomPlay()';
+        return move || 'randomPlay()';
 }
 
 function getWinner(playerMove,computerMove) {
-    // This function should either give us back 'player', 'computer', or 'tie'.
-    // The rules of the game are that rock beats scissors, scissors beats paper, and paper beats rock.
-    // Assume that the only possible input values we can get are 'rock', 'paper', and 'scissors'.
-    while (playerMove === "rock") {
-    if (computerMove === "rock") {
-        return "tie";
-    } else if (computerMove === "paper") {
-        return "computer";
-    } else if (computerMove === "scissors") {
-        return "player";
+    var winner;
+    // Write code that will set winner to either 'player', 'computer', or 'tie' based on the values of playerMove and computerMove.
+    // Assume that the only values playerMove and computerMove can have are 'rock', 'paper', and 'scissors'.
+    // The rules of the game are that 'rock' beats 'scissors', 'scissors' beats 'paper', and 'paper' beats 'rock'.
+    if (playerMove === 'rock' && computerMove === 'rock'){
+        winner = 'tie';
+    } else if (playerMove === 'rock' && computerMove === 'scissors') {
+         winner = 'player';
+    } else if (playerMove === 'rock' && computerMove === 'paper') {
+         winner = 'computer';
+    } else if (playerMove === 'paper' && computerMove === 'paper') {
+         winner = 'tie';
+    } else if (playerMove === 'paper' && computerMove === 'scissors') {
+         winner = 'computer';
+    } else if (playerMove === 'paper' && computerMove === 'rock') {
+         winner = 'player';
+    } else if (playerMove === 'scissors' && computerMove === 'scissors') {
+         winner = 'tie';
+    } else if (playerMove === 'scissors' && computerMove === 'paper') {
+         winner = 'player';
+    } else if (playerMove === 'scissors' && computerMove === 'rock') {
+         winner = 'computer';
     }
-}
-    while (playerMove === "paper") {
-    if (computerMove === "rock") {
-        return "player";
-    } else if (computerMove === "paper") {
-        return "tie";
-    } else if (computerMove === "scissors") {
-        return "computer";
-    }
-}
-    while (playerMove === "scissors") {
-    if (computerMove === "rock") {
-        return "computer";
-    } else if (computerMove === "paper") {
-        return "player";
-    } else if (computerMove === "scissors") {
-        return "tie";
-    }
-}
+    return winner;
 }
 
 function playToFive() {
