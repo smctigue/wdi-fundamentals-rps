@@ -48,7 +48,7 @@ function getComputerMove(move) {
     } else {
         console.log("Computer picked " + move + ".");
         computerMove = move;
-        getWinner();
+        getWinner(playerMove, computerMove);
     }
 }
 
