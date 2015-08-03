@@ -42,8 +42,16 @@ function getComputerMove(move) {
     // Write an expression that operates on a variable called `move`
     // If a `move` has a value, your expression should evaluate to that value.
     // However, if `move` is not specified / is null, your expression should equal `randomPlay()`.
-        return move || randomPlay();
+    var move = randomPlay();
+    if (move === null || 0) {
+        randomPlay();
+    } else {
+        console.log("Computer picked " + move + ".");
+        computerMove = move;
+        getWinner();
+    }
 }
+
 
 function getWinner(playerMove,computerMove) {
     // Write code that will set winner to either 'player', 'computer', or 'tie' based on the values of playerMove and computerMove.
