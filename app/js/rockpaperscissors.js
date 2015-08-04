@@ -21,8 +21,10 @@ function randomPlay() {
 /*           Write Your Code Below            */
 ////////////////////////////////////////////////
 
+// To not have to declare variables later
 var playerMove;
 var computerMove;
+
 function getPlayerMove(move) {
     var move = getInput();
     // Write an expression that operates on a variable called `move`
@@ -52,7 +54,9 @@ function getComputerMove(move) {
     }
 }
 
+//Same use as variables playerMove and computerMove above
 var winner;
+
 function getWinner(playerMove,computerMove) {
     // Write code that will set winner to either 'player', 'computer', or 'tie' based on the values of playerMove and computerMove.
     // Assume that the only values playerMove and computerMove can have are 'rock', 'paper', and 'scissors'.
