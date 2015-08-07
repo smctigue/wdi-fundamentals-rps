@@ -72,7 +72,7 @@ function getWinner(playerMove,computerMove) {
   // For example,
   //  console.log('Player chose ' + playerMove + ' while Computer chose ' + computerMove);
   //  console.log('The score is currently ' + playerWins + ' to ' + computerWins + '\n');
-    while (playerWins < 5 || computerWins < 5){
+    while (playerWins < 5 && computerWins < 5){
      var pMove = getPlayerMove();
      var cMove = getComputerMove(); 
      var winner = getWinner(pMove, cMove); 
@@ -89,8 +89,9 @@ function getWinner(playerMove,computerMove) {
             console.log("It's a tie!");
         }
             else {
-                console.log(winner + " wins!");
-        }
+                console.log(winner + " wins the round!");
+            }
+        
         console.log("SCORE: Player - " + playerWins + " | " + "Computer - " + computerWins);
 
         if (playerWins === 5 || computerWins === 5) {
